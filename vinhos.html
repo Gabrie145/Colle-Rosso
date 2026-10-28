@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nossos Vinhos | Colle Rosso</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <div class="marca">
+            <h1>COLLE ROSSO</h1>
+            <p>Tradição, qualidade e experiências únicas</p>
+        </div>
+
+        <button class="botao-menu"
+                id="botao-menu"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="menu-principal">
+            ☰
+        </button>
+
+        <nav class="menu" id="menu-principal">
+
+            <a href="index.html">Início</a>
+            <a href="vinicola.html">Nossa vinícola</a>
+            <a href="vinhos.html" aria-current="page">Nossos vinhos</a>
+            <a href="curiosidades.html">Curiosidades</a>
+            <a href="diferencas.html">Diferenciais</a>
+            <a href="links.html">Links e notícias</a>
+
+        </nav>
+
+    </header>
+
+
+    <section class="hero">
+
+        <div class="hero-conteudo">
+
+            <p class="subtitulo">NOSSA SELEÇÃO</p>
+
+            <h2>Nossos vinhos</h2>
+
+            <p>
+                Cada rótulo possui uma identidade própria,
+                pensado para diferentes ocasiões e experiências.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <main>
+
+        <section class="introducao">
+
+            <h2>Explore nossos rótulos</h2>
+
+            <p>
+                Utilize as setas para navegar pelos vinhos
+                e conhecer suas características.
+            </p>
+
+        </section>
+
+
+        <section class="carrossel" aria-label="Catálogo de vinhos">
+
+            <div class="carrossel-controles">
+
+                <button
+                    class="seta-carrossel"
+                    id="vinho-anterior"
+                    aria-label="Ver vinho anterior">
+
+                    &#10094;
+
+                </button>
+
+
+                <p id="contador-vinhos" aria-live="polite">
+                    Vinho 1 de 4
+                </p>
+
+
+                <button
+                    class="seta-carrossel"
+                    id="proximo-vinho"
+                    aria-label="Ver próximo vinho">
+
+                    &#10095;
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="trilho-vinhos"
+                id="trilho-vinhos"
+                tabindex="0"
+                aria-label="Carrossel. Use as setas do teclado para navegar">
+
+
+                <!-- VINHO 1 -->
+
+                <article class="cartao-vinho">
+
+                    <div class="foto-vinho">
+
+                        <img
+                            src="imagens/velvet-vine.jpg"
+                            alt="Garrafa do vinho Velvet Vine"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="informacoes-vinho">
+
+                        <p class="categoria-vinho">VINHO TINTO</p>
+
+                        <h3>Velvet Vine</h3>
+
+                        <p>
+                            Um rótulo de personalidade marcante,
+                            inspirado na elegância e na tradição
+                            das vinícolas.
+                        </p>
+
+                        <div class="detalhes-vinho">
+
+                            <p>
+                                <strong>Tipo:</strong>
+                                Tinto seco.
+                            </p>
+
+                            <p>
+                                <strong>Perfil:</strong>
+                                Encorpado, com aromas de frutas
+                                vermelhas maduras e notas de especiarias.
+                            </p>
+
+                            <p>
+                                <strong>Harmonização:</strong>
+                                Massas com molhos intensos,
+                                queijos curados e pratos assados.
+                            </p>
+
+                            <p>
+                                <strong>Ocasião:</strong>
+                                Jantares e encontros especiais.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- VINHO 2 -->
+
+                <article class="cartao-vinho">
+
+                    <div class="foto-vinho">
+
+                        <img
+                            src="imagens/prosecco-ginger.jpg"
+                            alt="Garrafa do vinho Prosecco Ginger"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="informacoes-vinho">
+
+                        <p class="categoria-vinho">VINHO BRANCO</p>
+
+                        <h3>Prosecco Ginger</h3>
+
+                        <p>
+                            Um conceito de vinho refrescante,
+                            com identidade visual clara e
+                            detalhes dourados.
+                        </p>
+
+                        <div class="detalhes-vinho">
+
+                            <p>
+                                <strong>Tipo:</strong>
+                                Branco aromático — conceito fictício.
+                            </p>
+
+                            <p>
+                                <strong>Perfil:</strong>
+                                Leve e refrescante, com notas cítricas
+                                e um toque aromático inspirado no gengibre.
+                            </p>
+
+                            <p>
+                                <strong>Harmonização:</strong>
+                                Saladas, peixes, entradas leves
+                                e queijos suaves.
+                            </p>
+
+                            <p>
+                                <strong>Ocasião:</strong>
+                                Almoços e celebrações.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- VINHO 3 -->
+
+                <article class="cartao-vinho">
+
+                    <div class="foto-vinho">
+
+                        <img
+                            src="imagens/rosato-di-colle.jpg"
+                            alt="Garrafa do vinho Rosato di Colle"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="informacoes-vinho">
+
+                        <p class="categoria-vinho">VINHO ROSÉ</p>
+
+                        <h3>Rosato di Colle</h3>
+
+                        <p>
+                            Um rótulo delicado, associado a
+                            momentos descontraídos e experiências
+                            ao ar livre.
+                        </p>
+
+                        <div class="detalhes-vinho">
+
+                            <p>
+                                <strong>Tipo:</strong>
+                                Rosé.
+                            </p>
+
+                            <p>
+                                <strong>Perfil:</strong>
+                                Frutado, com aromas de frutas
+                                vermelhas frescas.
+                            </p>
+
+                            <p>
+                                <strong>Harmonização:</strong>
+                                Bruschettas, massas leves
+                                e pratos mediterrâneos.
+                            </p>
+
+                            <p>
+                                <strong>Ocasião:</strong>
+                                Encontros e refeições descontraídas.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- VINHO 4 -->
+
+                <article class="cartao-vinho">
+
+                    <div class="foto-vinho">
+
+                        <img
+                            src="imagens/oro-di-festa.jpg"
+                            alt="Garrafa do espumante Oro di Festa"
+                            loading="lazy">
+
+                    </div>
+
+                    <div class="informacoes-vinho">
+
+                        <p class="categoria-vinho">ESPUMANTE</p>
+
+                        <h3>Oro di Festa</h3>
+
+                        <p>
+                            Um conceito de rótulo desenvolvido
+                            para representar celebrações e
+                            ocasiões especiais.
+                        </p>
+
+                        <div class="detalhes-vinho">
+
+                            <p>
+                                <strong>Tipo:</strong>
+                                Espumante — conceito fictício.
+                            </p>
+
+                            <p>
+                                <strong>Perfil:</strong>
+                                Fresco e delicado, ideal para
+                                momentos comemorativos.
+                            </p>
+
+                            <p>
+                                <strong>Harmonização:</strong>
+                                Canapés, frutas e sobremesas leves.
+                            </p>
+
+                            <p>
+                                <strong>Ocasião:</strong>
+                                Celebrações e brindes.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div
+                class="indicadores-vinhos"
+                id="indicadores-vinhos"
+                aria-label="Selecionar vinho">
+
+            </div>
+
+        </section>
+
+
+        <p class="aviso">
+            Os rótulos e as descrições apresentados são conceitos
+            fictícios e podem ser modificados conforme o projeto.
+        </p>
+
+    </main>
+
+
+    <footer class="rodape">
+
+        <h3>COLLE ROSSO</h3>
+
+        <p>Tradição, qualidade e autenticidade.</p>
+
+        <p class="rodape-menor">
+            Vinícola fictícia desenvolvida para um projeto acadêmico.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
