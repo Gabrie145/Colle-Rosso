@@ -135,7 +135,7 @@ button:focus-visible {
     background:
         linear-gradient(
             120deg,
-            rgba(53, 8, 19, 0.96),
+            #660b14,
             rgba(91, 16, 37, 0.78)
         );
 
