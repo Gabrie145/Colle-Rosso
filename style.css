@@ -133,13 +133,8 @@ button:focus-visible {
     padding: 55px 22px;
 
     background:
-        linear-gradient(
-            120deg,
             #660b14,
-            rgba(91, 16, 37, 0.78)
-        );
 
-    color: var(--branco);
 }
 
 .hero-conteudo {
