@@ -314,6 +314,185 @@ botoesCuriosidades.forEach(function (botao) {
 
         }
 
+        // ======================================
+// CARRINHO DE COMPRAS - COLLE ROSSO
+// ======================================
+
+const CHAVE_CARRINHO = "colleRossoCarrinho";
+
+function obterCarrinho() {
+    try {
+        return JSON.parse(
+            localStorage.getItem(CHAVE_CARRINHO)
+        ) || [];
+    } catch {
+        return [];
+    }
+}
+
+function salvarCarrinho(carrinho) {
+    localStorage.setItem(
+        CHAVE_CARRINHO,
+        JSON.stringify(carrinho)
+    );
+}
+
+function adicionarAoCarrinho(nome, preco, imagem) {
+    const carrinho = obterCarrinho();
+
+    const produto = carrinho.find(
+        item => item.nome === nome
+    );
+
+    if (produto) {
+        produto.quantidade++;
+    } else {
+        carrinho.push({
+            nome,
+            preco,
+            imagem,
+            quantidade: 1
+        });
+    }
+
+    salvarCarrinho(carrinho);
+
+    alert(nome + " foi adicionado ao carrinho!");
+    atualizarContadorCarrinho();
+}
+
+function atualizarContadorCarrinho() {
+    const carrinho = obterCarrinho();
+
+    const quantidade = carrinho.reduce(
+        (total, item) => total + item.quantidade,
+        0
+    );
+
+    document.querySelectorAll(".contador-carrinho")
+        .forEach(elemento => {
+            elemento.textContent = quantidade;
+        });
+}
+
+// Botões de adicionar
+document.querySelectorAll("[data-cart-add]")
+    .forEach(botao => {
+        botao.addEventListener("click", () => {
+            adicionarAoCarrinho(
+                botao.dataset.nome,
+                Number(botao.dataset.preco),
+                botao.dataset.imagem
+            );
+        });
+    });
+
+// Exibir os produtos na página do carrinho
+function exibirCarrinho() {
+    const lista = document.getElementById("lista-carrinho");
+
+    if (!lista) return;
+
+    const carrinho = obterCarrinho();
+
+    lista.innerHTML = "";
+
+    if (carrinho.length === 0) {
+        lista.innerHTML = `
+            <p class="carrinho-vazio">
+                Seu carrinho está vazio.
+            </p>
+        `;
+
+        document.getElementById("total-carrinho")
+            .textContent = "R$ 0,00";
+
+        return;
+    }
+
+    let total = 0;
+
+    carrinho.forEach((item, indice) => {
+        total += item.preco * item.quantidade;
+
+        const produto = document.createElement("div");
+
+        produto.className = "item-carrinho";
+
+        produto.innerHTML = `
+            <img src="${item.imagem}" alt="${item.nome}">
+
+            <div class="informacoes-produto">
+                <h3>${item.nome}</h3>
+
+                <p>
+                    ${item.preco.toLocaleString("pt-BR", {
+                        style: "currency",
+                        currency: "BRL"
+                    })}
+                </p>
+
+                <div class="controles-quantidade">
+                    <button data-acao="diminuir">−</button>
+
+                    <span>${item.quantidade}</span>
+
+                    <button data-acao="aumentar">+</button>
+                </div>
+            </div>
+
+            <button class="remover-produto">
+                Remover
+            </button>
+        `;
+
+        produto.querySelector('[data-acao="diminuir"]')
+            .addEventListener("click", () => alterarQuantidade(indice, -1));
+
+        produto.querySelector('[data-acao="aumentar"]')
+            .addEventListener("click", () => alterarQuantidade(indice, 1));
+
+        produto.querySelector(".remover-produto")
+            .addEventListener("click", () => removerProduto(indice));
+
+        lista.appendChild(produto);
+    });
+
+    document.getElementById("total-carrinho")
+        .textContent = total.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        });
+}
+
+function alterarQuantidade(indice, alteracao) {
+    const carrinho = obterCarrinho();
+
+    carrinho[indice].quantidade += alteracao;
+
+    if (carrinho[indice].quantidade <= 0) {
+        carrinho.splice(indice, 1);
+    }
+
+    salvarCarrinho(carrinho);
+    exibirCarrinho();
+    atualizarContadorCarrinho();
+}
+
+function removerProduto(indice) {
+    const carrinho = obterCarrinho();
+
+    carrinho.splice(indice, 1);
+
+    salvarCarrinho(carrinho);
+    exibirCarrinho();
+    atualizarContadorCarrinho();
+}
+
+// Inicialização
+exibirCarrinho();
+atualizarContadorCarrinho();
+
     });
 
 });

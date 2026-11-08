@@ -691,3 +691,144 @@ main {
     }
 
 }
+
+/* ======================================
+   CARRINHO - COLLE ROSSO
+====================================== */
+
+.pagina-carrinho {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 30px;
+}
+
+.pagina-carrinho h1 {
+    color: var(--bordo);
+    margin-bottom: 15px;
+}
+
+.pagina-carrinho > p {
+    margin-bottom: 35px;
+}
+
+.item-carrinho {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: white;
+    border: 1px solid var(--dourado);
+    border-radius: 10px;
+}
+
+.item-carrinho img {
+    width: 100px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.informacoes-produto {
+    flex: 1;
+}
+
+.informacoes-produto h3 {
+    color: var(--bordo);
+    margin-bottom: 10px;
+}
+
+.controles-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.controles-quantidade button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--dourado);
+    background: var(--creme);
+    color: var(--bordo);
+    cursor: pointer;
+}
+
+.remover-produto {
+    border: none;
+    background: none;
+    color: var(--bordo);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.resumo-carrinho {
+    margin-top: 35px;
+    padding: 25px;
+    background: var(--creme);
+    border: 1px solid var(--dourado);
+    border-radius: 10px;
+}
+
+.resumo-carrinho h2 {
+    margin-bottom: 20px;
+    color: var(--bordo);
+}
+
+.resumo-carrinho p {
+    margin-bottom: 15px;
+}
+
+.aviso-carrinho {
+    font-size: 13px;
+    color: #705b50;
+}
+
+.botao-voltar,
+.botao-carrinho {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: var(--bordo);
+    color: var(--creme);
+    border: 1px solid var(--dourado);
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-voltar:hover,
+.botao-carrinho:hover {
+    background: var(--dourado);
+    color: var(--bordo);
+}
+
+.carrinho-vazio {
+    padding: 30px;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    .pagina-carrinho {
+        padding: 20px;
+        margin: 30px auto;
+    }
+
+    .item-carrinho {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .item-carrinho img {
+        width: 75px;
+        height: 100px;
+    }
+
+    .remover-produto {
+        margin-left: auto;
+    }
+}
